@@ -14,6 +14,10 @@ const App = () => {
           <Route path='employees' element = {<Employees/>}/>
           <Route path='customers' element = {<Customers/>}/>
           <Route path='orders' element = {<Orders/>}/>
+          <Route path='budget-sales' element = {<BudgetSales/>}/>
+          <Route path='yearly-income' element = {<YearlyIncome/>}/>
+          <Route path='sales-overview' element = {<SalesOverview/>}/>
+          <Route path='best-sellers' element = {<BestSellers/>}/>
         </Routes>
       </div>
     </div>
