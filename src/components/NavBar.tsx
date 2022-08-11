@@ -7,10 +7,10 @@ const NavBar = () => {
     <div className="navbar">
         <div className="logo-container">
           <Link to='/'  className="logo-link">
-            <h1>Dashboard</h1>
+            <span>Dashboard</span>
           </Link>
         </div>
-        <div className="nav-items-container">
+        <div >
             {links.map((item) => (
                 <div key={item.title}>
                   <p className="nav-title">{item.title}</p>

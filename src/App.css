@@ -34,8 +34,7 @@
   width: 100%;
   min-height: 100vh;
   display: flex;
-  margin: 0;
-  padding: 0;
+  outline: 1px solid #1D1C25;
 }
 
 .nav-container {
@@ -46,10 +45,6 @@
 .navbar{
   padding: 1rem;
 }
-
-/* .nav-items-container {
-  margin-top: 50px;
-} */
 
 .nav-title {
   margin-top: 50px;
@@ -97,6 +92,24 @@
 .logo-link {
   text-decoration: none;
   color: var(--raisin-black);
+}
+
+.header-container {
+  display:flex;
+  padding: 1rem;
+  justify-content: space-between;
+}
+
+.header-rigt-side {
+  display: flex;
+}
+
+.header-greeting {
+  display: flex;
+}
+
+.menu-icon {
+  cursor: pointer;
 }
 
 .main {
