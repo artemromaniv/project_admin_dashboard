@@ -1,5 +1,5 @@
 import './App.css'
-import { NavBar, Home, Employees, Customers, Orders, BudgetSales, YearlyIncome, SalesOverview, BestSellers } from './components'
+import { NavBar, Header, Home, Employees, Customers, Orders, BudgetSales, YearlyIncome, SalesOverview, BestSellers } from './components'
 import { Routes, Route } from 'react-router'
 const App = () => {
 
@@ -9,6 +9,7 @@ const App = () => {
         <NavBar/>
       </div>
       <div className="main">
+        <Header/>
         <Routes>
           <Route path='/' element = {<Home/>}/>
           <Route path='employees' element = {<Employees/>}/>

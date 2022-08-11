@@ -2,15 +2,15 @@
 import React,{ createContext, useContext, useState } from "react";
 
 interface StateContextType {
-  screenSize:number | undefined
+  collapsed:boolean
 }
 
 const StateContext = createContext<StateContextType>(null!);
 
 export const ContextProvider = ({children}:React.PropsWithChildren) => {
-  const [screenSize,setScreenSize] = useState(undefined)
+  const [collapsed,setCollapsed] = useState(false)
   return (
-    <StateContext.Provider value={{screenSize}}>
+    <StateContext.Provider value={{collapsed}}>
         {children}
     </StateContext.Provider>
   )
