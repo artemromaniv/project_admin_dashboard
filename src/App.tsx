@@ -1,5 +1,5 @@
 import './App.css'
-import { NavBar, AppHeader, Home, Employees, Customers, Orders, BudgetSales, YearlyIncome, SalesOverview, BestSellers } from './components'
+import { NavBar, Header, Home, Employees, Customers, Orders, BudgetSales, YearlyIncome, SalesOverview, BestSellers } from './components'
 import { Routes, Route } from 'react-router'
 import { Layout, Menu } from 'antd';
 const App = () => {
@@ -10,7 +10,7 @@ const App = () => {
         <NavBar/>
       </div>
       <div className="main">
-        <AppHeader/>
+        <Header/>
         <Layout>
           <Routes>
             <Route path='/' element = {<Home/>}/>
