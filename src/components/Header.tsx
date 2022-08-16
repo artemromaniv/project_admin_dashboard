@@ -1,10 +1,9 @@
 import { MenuOpen, Menu, NotificationsNone, KeyboardArrowDown } from "@mui/icons-material"
 import { Typography } from "antd"
-import { Header as HeaderAntd } from "antd/lib/layout/layout"
 import Miles from '../assets/Miles.jpg'
 const Header = () => {
   return (
-    <HeaderAntd className="header-container">
+    <div className="header-container">
         <div className="menu-icon">
           <Menu/>
         </div>
@@ -18,7 +17,7 @@ const Header = () => {
             <KeyboardArrowDown/>
           </div>                  
         </div>
-    </HeaderAntd>
+    </div>
   )
 }
 
