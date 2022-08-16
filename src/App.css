@@ -132,3 +132,7 @@
   flex: 0.85;
   background-color: var(--ghost-white);
 }
+
+.customer-table-container {
+  padding: 2rem;
+}
