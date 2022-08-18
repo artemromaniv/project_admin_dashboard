@@ -81,143 +81,143 @@ export const data:DataType[] = [
     },
     {
         key:'11',
-        name:'Tajima Haru',
-        email:'tajimaharu@gmail.com',
-        location:'Japan',
-        lastActive:dayjs('2022-05-25').format('DD.MM.YYYY')
+        name:'Genesis Martinez',
+        email:'genesis.martinez@example.com',
+        location:'Austria',
+        lastActive:dayjs('2022-07-17').format('DD.MM.YYYY')
     },
     {
         key:'12',
-        name:'Tajima Haru',
-        email:'tajimaharu@gmail.com',
-        location:'Japan',
+        name:'Wade Owens',
+        email:'wade.owens@example.com',
+        location:'USA',
         lastActive:dayjs('2022-05-25').format('DD.MM.YYYY')
     },
     {
         key:'13',
-        name:'Tajima Haru',
-        email:'tajimaharu@gmail.com',
+        name:'Naoki Nagisa',
+        email:'naoki.nagisa@example.com',
         location:'Japan',
-        lastActive:dayjs('2022-05-25').format('DD.MM.YYYY')
+        lastActive:dayjs('2022-02-16').format('DD.MM.YYYY')
     },
     {
         key:'14',
-        name:'Tajima Haru',
-        email:'tajimaharu@gmail.com',
-        location:'Japan',
-        lastActive:dayjs('2022-05-25').format('DD.MM.YYYY')
+        name:'Tracey Silva',
+        email:'tracey.silva@example.com',
+        location:'Spain',
+        lastActive:dayjs('2022-06-05').format('DD.MM.YYYY')
     },
     {
         key:'15',
-        name:'Tajima Haru',
-        email:'tajimaharu@gmail.com',
+        name:'Hamada Chiyo',
+        email:'hamada.chiyo@example.com',
         location:'Japan',
-        lastActive:dayjs('2022-05-25').format('DD.MM.YYYY')
+        lastActive:dayjs('2022-05-17').format('DD.MM.YYYY')
     },
     {
         key:'16',
-        name:'Tajima Haru',
-        email:'tajimaharu@gmail.com',
+        name:'Jun Yamaguchi',
+        email:'jun.yamaguchi@example.com',
         location:'Japan',
-        lastActive:dayjs('2022-05-25').format('DD.MM.YYYY')
+        lastActive:dayjs('2022-06-11').format('DD.MM.YYYY')
     },
     {
         key:'17',
-        name:'Tajima Haru',
-        email:'tajimaharu@gmail.com',
+        name:'Takuma Watanabe',
+        email:'takuma.watanabe@example.com',
         location:'Japan',
-        lastActive:dayjs('2022-05-25').format('DD.MM.YYYY')
+        lastActive:dayjs('2022-08-08').format('DD.MM.YYYY')
     },
     {
         key:'18',
-        name:'Tajima Haru',
-        email:'tajimaharu@gmail.com',
-        location:'Japan',
-        lastActive:dayjs('2022-05-25').format('DD.MM.YYYY')
+        name:'Leon Shelton',
+        email:'leon.shelton@example.com',
+        location:'USA',
+        lastActive:dayjs('2022-07-16').format('DD.MM.YYYY')
     },
     {
         key:'19',
-        name:'Tajima Haru',
-        email:'tajimaharu@gmail.com',
-        location:'Japan',
-        lastActive:dayjs('2022-05-25').format('DD.MM.YYYY')
+        name:'Willie Gray',
+        email:'willie.gray@example.com',
+        location:'UK',
+        lastActive:dayjs('2022-03-06').format('DD.MM.YYYY')
     },
     {
         key:'20',
-        name:'Tajima Haru',
-        email:'tajimaharu@gmail.com',
-        location:'Japan',
-        lastActive:dayjs('2022-05-25').format('DD.MM.YYYY')
+        name:'Adrian Hill',
+        email:'adrian.hill@example.com',
+        location:'Germany',
+        lastActive:dayjs('2022-08-05').format('DD.MM.YYYY')
     },
     {
         key:'21',
-        name:'Tajima Haru',
-        email:'tajimaharu@gmail.com',
+        name:'Nonaka Michi',
+        email:'nonaka.michi@example.com',
         location:'Japan',
-        lastActive:dayjs('2022-05-25').format('DD.MM.YYYY')
+        lastActive:dayjs('2022-02-23').format('DD.MM.YYYY')
     },
     {
         key:'22',
-        name:'Tajima Haru',
-        email:'tajimaharu@gmail.com',
+        name:'Kaneko Yuu',
+        email:'kaneko.yuu@example.com',
         location:'Japan',
-        lastActive:dayjs('2022-05-25').format('DD.MM.YYYY')
+        lastActive:dayjs('2021-12-13').format('DD.MM.YYYY')
     },
     {
         key:'23',
-        name:'Tajima Haru',
-        email:'tajimaharu@gmail.com',
-        location:'Japan',
-        lastActive:dayjs('2022-05-25').format('DD.MM.YYYY')
+        name:'Clara Mcdonalid',
+        email:'clara.mcdonalid@example.com',
+        location:'USA',
+        lastActive:dayjs('2022-04-01').format('DD.MM.YYYY')
     },
     {
         key:'24',
-        name:'Tajima Haru',
-        email:'tajimaharu@gmail.com',
-        location:'Japan',
-        lastActive:dayjs('2022-05-25').format('DD.MM.YYYY')
+        name:'Leo Johnston',
+        email:'leo.johnston@example.com',
+        location:'UK',
+        lastActive:dayjs('2022-06-10').format('DD.MM.YYYY')
     },
     {
         key:'25',
-        name:'Tajima Haru',
-        email:'tajimaharu@gmail.com',
-        location:'Japan',
-        lastActive:dayjs('2022-05-25').format('DD.MM.YYYY')
+        name:'Johnanthan Snow',
+        email:'johnathansnow@example.com',
+        location:'USA',
+        lastActive:dayjs('1603-09-19').format('DD.MM.YYYY')
     },
     {
         key:'26',
-        name:'Tajima Haru',
-        email:'tajimaharu@gmail.com',
-        location:'Japan',
-        lastActive:dayjs('2022-05-25').format('DD.MM.YYYY')
+        name:'John Snow',
+        email:'johnsnow@example.com',
+        location:'USA',
+        lastActive:dayjs('3087-09-19').format('DD.MM.YYYY')
     },
     {
         key:'27',
-        name:'Tajima Haru',
-        email:'tajimaharu@gmail.com',
+        name:'Yokoyama Shou',
+        email:'yokohama.shou@example.com',
         location:'Japan',
-        lastActive:dayjs('2022-05-25').format('DD.MM.YYYY')
+        lastActive:dayjs('2021-11-16').format('DD.MM.YYYY')
     },
     {
         key:'28',
-        name:'Tajima Haru',
-        email:'tajimaharu@gmail.com',
-        location:'Japan',
-        lastActive:dayjs('2022-05-25').format('DD.MM.YYYY')
+        name:'Kylie Welch',
+        email:'kylie.welch@example.com',
+        location:'Germany',
+        lastActive:dayjs('2021-09-18').format('DD.MM.YYYY')
     },
     {
         key:'29',
-        name:'Tajima Haru',
-        email:'tajimaharu@gmail.com',
+        name:'Nomura Shizuko',
+        email:'nomura.shizuko@example.com',
         location:'Japan',
-        lastActive:dayjs('2022-05-25').format('DD.MM.YYYY')
+        lastActive:dayjs('2021-10-21').format('DD.MM.YYYY')
     },
     {
         key:'30',
-        name:'Tajima Haru',
-        email:'tajimaharu@gmail.com',
-        location:'Japan',
-        lastActive:dayjs('2022-05-25').format('DD.MM.YYYY')
+        name:'Marsha Gray',
+        email:'marsha.gray@example.com',
+        location:'Spain',
+        lastActive:dayjs('2020-07-02').format('DD.MM.YYYY')
     },
 
 ]
