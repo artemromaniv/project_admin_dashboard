@@ -1,7 +1,7 @@
 import type {ColumnsType} from 'antd/es/table'
 
 interface DataType {
-    key:number,
+    key:string,
     employee:string,
     position:string,
     email:string,
@@ -11,13 +11,21 @@ interface DataType {
 
 export const data:DataType[] = [
     {
-        key:1,
+        key:'1',
         employee:'Ariene Fox',
         position:'Lead UX Designer',
         email:'ariene.fox@example.com',
         status:'Full Time',
         salary:58000
-    }
+    },
+    {
+        key:'2',
+        employee:'Ariene Fox',
+        position:'Lead UX Designer',
+        email:'ariene.fox@example.com',
+        status:'Full Time',
+        salary:58000
+    },
 ]
 
 export const columns:ColumnsType<DataType> = [
