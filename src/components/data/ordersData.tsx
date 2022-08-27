@@ -1,6 +1,7 @@
 import type {ColumnsType} from 'antd/es/table'
 import dayjs from 'dayjs'
 import {Tag} from 'antd'
+import { color } from '@mui/system'
 interface DataType {
     key:string
     orderID:number,
@@ -192,7 +193,7 @@ export const columns:ColumnsType<DataType> = [
             <>
               {order.map(orderData => {
                 return (
-                  <Tag color={'geekblue'} key={orderData}>
+                  <Tag  key={orderData}>
                     {orderData.toUpperCase()}
                   </Tag>
                 );
@@ -219,9 +220,9 @@ export const columns:ColumnsType<DataType> = [
         title:'Delivery Status',
         dataIndex:'deliveryStatus',
         key:'deliveryStatus',
-        render: (_, { deliveryStatus }) => (
+        render: (_, { deliveryStatus}) => (
             <>
-                <Tag color={''} key={deliveryStatus}>
+                <Tag color={deliveryStatus === 'Canceled' ? 'error' : 'green'} key={deliveryStatus}>
                     {deliveryStatus}
                 </Tag>
             </>
