@@ -138,7 +138,7 @@ export const data: DataType[] = [
         deliveryDate:'',
         customer:'Clara Mcdonalid',
         deliveryPricing:`${1385} $`,
-        deliveryStatus:'Canveled'
+        deliveryStatus:'Canceled'
     },
     {
         key:'15',
