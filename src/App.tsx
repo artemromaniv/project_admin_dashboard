@@ -2,13 +2,21 @@ import './App.css'
 import { NavBar, Header, Home, Employees, Customers, Orders, BudgetSales, YearlyIncome, SalesOverview, BestSellers } from './components'
 import { Routes, Route } from 'react-router'
 import { Layout, Menu } from 'antd';
+import { useStateContext } from './contexts/ContextProvider';
+
 const App = () => {
+
+  const {collapsed} = useStateContext();
 
   return (
     <div className="App">
-      <div className="nav-container">
-        <NavBar/>
-      </div>
+      {!collapsed && (
+        <div className="nav-container">
+          <NavBar/>
+        </div>
+      )
+      }
+
       <div className="main">
         <Header/>
         <Layout>
