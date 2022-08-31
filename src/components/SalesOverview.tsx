@@ -1,10 +1,10 @@
-
-
+import { Content } from "antd/lib/layout/layout"
+import { SalesOverviewChart } from "./charts/SalesOverviewChart"
 const SalesOverview = () => {
   return (
-    <div>
-      
-    </div>
+    <Content className="chart-container">
+      <SalesOverviewChart />
+    </Content>
   )
 }
 

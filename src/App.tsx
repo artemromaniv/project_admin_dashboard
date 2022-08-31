@@ -2,7 +2,10 @@ import './App.css'
 import { NavBar, Header, Home, Employees, Customers, Orders, BudgetSales, YearlyIncome, SalesOverview, BestSellers } from './components'
 import { Routes, Route } from 'react-router'
 import { Layout, Menu } from 'antd';
-import { useStateContext } from './contexts/ContextProvider';
+import { Chart, registerables } from 'chart.js'
+import { useStateContext } from './contexts/ContextProvider'
+Chart.register(...registerables)
+
 
 const App = () => {
 
