@@ -39,7 +39,7 @@
 
 
 .nav-container {
-  flex: 0.15;
+  width: 17.5%;
   background-color: white;
 }
 
@@ -130,7 +130,6 @@
 }
 
 .main {
-  flex: 0.85;
   width: 100%;
   background-color: var(--ghost-white);
 }
