@@ -3,7 +3,9 @@ import { SalesOverviewChart } from "./charts/SalesOverviewChart"
 const SalesOverview = () => {
   return (
     <Content className="chart-container">
-      <SalesOverviewChart />
+      <div className="chart" >
+        <SalesOverviewChart />
+      </div>
     </Content>
   )
 }

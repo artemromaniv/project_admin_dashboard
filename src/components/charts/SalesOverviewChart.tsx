@@ -16,6 +16,11 @@ const data = {
     }]
 }
 
+const options = {
+    responsive: true,
+    maintainAspectRatio: true,
+}
+
 export const SalesOverviewChart = () => {
-    return <Pie className="chart" data={data}/>
+    return <Pie options={options}  data={data} />
 }
