@@ -1,4 +1,4 @@
-The project was bootstrapped using Vite build tool, so make sure it's installed before running the app
+The project was bootstrapped using [Vite](https://vitejs.dev/) build tool
 ## Getting Started
 
 First, run the development server:
