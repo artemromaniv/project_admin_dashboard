@@ -11,7 +11,7 @@ const data = {
     labels:lables,
     datasets:[{
         label:'rabdom data',
-        backgroundColor:[ '#000000','#ffffff'],
+        backgroundColor:['000000'],
         data: [100,100,100,100, 200],
     }]
 }
