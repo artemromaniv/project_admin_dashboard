@@ -1,4 +1,4 @@
-import { Pie } from "react-chartjs-2";
+import { Doughnut } from "react-chartjs-2";
 
 const lables:string[] =[
     'Japan',
@@ -22,5 +22,5 @@ const options = {
 }
 
 export const SalesOverviewChart = () => {
-    return <Pie options={options}  data={data} />
+    return <Doughnut options={options}  data={data} />
 }

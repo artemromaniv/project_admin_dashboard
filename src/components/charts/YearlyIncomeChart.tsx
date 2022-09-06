@@ -5,7 +5,7 @@ const data = {
     labels:lables,
     datasets:[{
         label:'Yearly Income',
-        backgroundColor:[ '#000000'],
+        backgroundColor:[ '#352FC5'],
         data: [960178,1008890,1104090,1040673, 950593,1102846,1200000,800000],
     }]
 }

@@ -28,7 +28,7 @@ const data = {
     labels:lables,
     datasets:[{
         label:'Best Sellers',
-        backgroundColor:[ '#000000'],
+        backgroundColor:[ '#352FC5'],
         data: [10,9,8,7,6,5,4,3,2,1,],
     }]
 }
