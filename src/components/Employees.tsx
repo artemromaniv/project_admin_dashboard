@@ -76,6 +76,28 @@ const  filterData = (data: RowData[], search: string) => {
   );
 }
 
+const sortData = (
+  data: RowData[],
+  payload: { sortBy: keyof RowData | null; reversed: boolean; search: string }
+) => {
+  const { sortBy } = payload;
+
+  if (!sortBy) {
+    return filterData(data, payload.search);
+  }
+
+  return filterData(
+    [...data].sort((a, b) => {
+      if (payload.reversed) {
+        return b[sortBy].localeCompare(a[sortBy]);
+      }
+
+      return a[sortBy].localeCompare(b[sortBy]);
+    }),
+    payload.search
+  );
+}
+
 const Employees = () => {
   return (
     <div>Employees</div>
