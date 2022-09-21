@@ -98,9 +98,105 @@ const sortData = (
   );
 }
 
-const Employees = () => {
+const Employees = ({ data }: TableSortProps) => {
+  const [search, setSearch] = useState('');
+  const [sortedData, setSortedData] = useState(data);
+  const [sortBy, setSortBy] = useState<keyof RowData | null>(null);
+  const [reverseSortDirection, setReverseSortDirection] = useState(false);
+
+  const setSorting = (field: keyof RowData) => {
+    const reversed = field === sortBy ? !reverseSortDirection : false;
+    setReverseSortDirection(reversed);
+    setSortBy(field);
+    setSortedData(sortData(data, { sortBy: field, reversed, search }))
+  }
+
+  const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const { value } = event.currentTarget;
+    setSearch(value);
+    setSortedData(sortData(data, { sortBy, reversed: reverseSortDirection, search: value }));
+  };
+
+
+  //lines below causing errors,needs to be fixed
+  const rows = sortedData.map((row) => (
+    <tr key={row.employee}>
+      <td>{row.employee}</td>
+      <td>{row.email}</td>
+      <td>{row.status}</td>
+      <td>{row.position}</td>
+      <td>{row.salary}</td>
+    </tr>
+  ));
+
   return (
-    <div>Employees</div>
+    <ScrollArea>
+    <TextInput
+      placeholder="Search by any field"
+      mb="md"
+      icon={<Search />}
+      value={search}
+      onChange={handleSearchChange}
+    />
+    <Table
+      horizontalSpacing="md"
+      verticalSpacing="xs"
+      sx={{ tableLayout: 'fixed', minWidth: 700 }}
+    >
+      <thead>
+        <tr>
+          <TableHeader
+            sorted={sortBy === 'employee'}
+            reversed={reverseSortDirection}
+            onSort={() => setSorting('employee')}
+          >
+            Name
+          </TableHeader>
+          <TableHeader
+            sorted={sortBy === 'email'}
+            reversed={reverseSortDirection}
+            onSort={() => setSorting('email')}
+          >
+            Email
+          </TableHeader>
+          <TableHeader
+            sorted={sortBy === 'status'}
+            reversed={reverseSortDirection}
+            onSort={() => setSorting('status')}
+          >
+            Status
+          </TableHeader>
+          <TableHeader
+            sorted={sortBy === 'position'}
+            reversed={reverseSortDirection}
+            onSort={() => setSorting('position')}
+          >
+            Position
+          </TableHeader>
+          <TableHeader
+            sorted={sortBy === 'salary'}
+            reversed={reverseSortDirection}
+            onSort={() => setSorting('salary')}
+          >
+            Salary
+          </TableHeader>
+        </tr>
+      </thead>
+      <tbody>
+        {rows.length > 0 ? (
+          rows
+        ) : (
+          <tr>
+            <td colSpan={Object.keys(data[0]).length}>
+              <Text weight={500} align="center">
+                Nothing found
+              </Text>
+            </td>
+          </tr>
+        )}
+      </tbody>
+    </Table>
+  </ScrollArea>
   )
 }
 
