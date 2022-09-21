@@ -1,6 +1,6 @@
 
 
-interface DataType {
+export interface DataType {
     key:string,
     employee:string,
     position:string,
