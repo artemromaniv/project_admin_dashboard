@@ -1,4 +1,4 @@
-import type {ColumnsType} from 'antd/es/table'
+
 import dayjs from 'dayjs'
 interface DataType {
     key:string,
@@ -220,27 +220,4 @@ export const data:DataType[] = [
         lastActive:dayjs('2020-07-02').format('DD.MM.YYYY')
     },
 
-]
-
-export const columns:ColumnsType<DataType> = [
-    {
-        title:'Name',
-        dataIndex:'name',
-        key:'name'
-    },
-    {
-        title:'Email',
-        dataIndex:'email',
-        key:'email'
-    },
-    {
-        title:'Location',
-        dataIndex:'location',
-        key:'location'
-    },
-    {
-        title:'Last Active',
-        dataIndex:'lastActive',
-        key:'lastactive'
-    }
-]
+ ]

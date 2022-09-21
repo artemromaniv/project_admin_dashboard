@@ -8,6 +8,7 @@ const theme:MantineThemeOverride = {
 
     white:'#ffffff',
     black:'#1D1C25',
+
     spacing:{
         xs:8,
         sm:16,

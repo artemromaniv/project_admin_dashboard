@@ -1,4 +1,4 @@
-import type {ColumnsType} from 'antd/es/table'
+
 
 interface DataType {
     key:string,
@@ -148,31 +148,31 @@ export const data:DataType[] = [
     },
 ]
 
-export const columns:ColumnsType<DataType> = [
-    {
-        title:'Employee',
-        dataIndex:'employee',
-        key:'employee'
-    },
-    {
-        title:'Position',
-        dataIndex:'position',
-        key:'position'
-    },
-    {
-        title:'Email',
-        dataIndex:'email',
-        key:'email'
-    },
-    {
-        title:'Status',
-        dataIndex:'status',
-        key:'status'
-    },
-    {
-        title:'Salary/Year $',
-        dataIndex:'salary',
-        key:'salary'
-    },
-]
+// export const columns:ColumnsType<DataType> = [
+//     {
+//         title:'Employee',
+//         dataIndex:'employee',
+//         key:'employee'
+//     },
+//     {
+//         title:'Position',
+//         dataIndex:'position',
+//         key:'position'
+//     },
+//     {
+//         title:'Email',
+//         dataIndex:'email',
+//         key:'email'
+//     },
+//     {
+//         title:'Status',
+//         dataIndex:'status',
+//         key:'status'
+//     },
+//     {
+//         title:'Salary/Year $',
+//         dataIndex:'salary',
+//         key:'salary'
+//     },
+// ]
 
