@@ -32,7 +32,7 @@ const Orders = () => {
   const [scrolled, setScrolled] = useState(false);
 
   const rows = data.map((row) => (
-    <tr key={row.key}>
+    <tr key={row.orderID}>
       <td>{row.orderID}</td>
       <td>{row.order}</td>
       <td>{row.deliveryDate}</td>
