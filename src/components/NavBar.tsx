@@ -10,7 +10,7 @@ const useStyles = createStyles((theme, _param, getRef)=> {
     },
     logo_link:{
       textDecoration:'none',
-      color:theme.black
+      color:theme.colorScheme === 'light' ? '#1D1C25' : '#ffffff'
     },
     nav_title:{
       marginTop:theme.spacing.sm
