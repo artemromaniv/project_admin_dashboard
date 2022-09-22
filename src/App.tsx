@@ -1,7 +1,6 @@
 import './App.css'
 import { NavBar, Header, Home, Employees, Customers, Orders, BudgetSales, YearlyIncome, SalesOverview, BestSellers } from './components'
 import { Routes, Route } from 'react-router'
-import { Layout, Menu } from 'antd';
 import { Chart, registerables } from 'chart.js'
 import { useStateContext } from './contexts/ContextProvider'
 Chart.register(...registerables)
@@ -22,7 +21,7 @@ const App = () => {
 
       <div className="main">
         <Header/>
-        <Layout>
+        <div>
           <Routes>
             <Route path='/' element = {<Home/>}/>
             <Route path='employees' element = {<Employees/>}/>
@@ -33,7 +32,7 @@ const App = () => {
             <Route path='sales-overview' element = {<SalesOverview/>}/>
             <Route path='best-sellers' element = {<BestSellers/>}/>
           </Routes>
-        </Layout>
+        </div>
       </div>
     </div>
   )

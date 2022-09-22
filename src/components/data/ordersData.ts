@@ -1,7 +1,4 @@
-import type {ColumnsType} from 'antd/es/table'
 import dayjs from 'dayjs'
-import {Tag} from 'antd'
-import { color } from '@mui/system'
 interface DataType {
     key:string
     orderID:number,
@@ -179,53 +176,53 @@ export const data: DataType[] = [
 
 ]
 
-export const columns:ColumnsType<DataType> = [
-    {
-        title:'Order ID',
-        dataIndex:'orderID',
-        key:'orderID'
-    },
-    {
-        title:'Order',
-        dataIndex:'order',
-        key:'order',
-        render: (_, { order }) => (
-            <>
-              {order.map(orderData => {
-                return (
-                  <Tag  key={orderData}>
-                    {orderData.toUpperCase()}
-                  </Tag>
-                );
-              })}
-            </>
-          ),
-    },
-    {
-        title:'Delivery Date',
-        dataIndex:'deliveryDate',
-        key:'deliveruDate'
-    },
-    {
-        title:'Customer',
-        dataIndex:'customer',
-        key:'customer'
-    },
-    {
-        title:'Delivery Pricing',
-        dataIndex:'deliveryPricing',
-        key:'deliveryPricing'
-    },
-    {
-        title:'Delivery Status',
-        dataIndex:'deliveryStatus',
-        key:'deliveryStatus',
-        render: (_, { deliveryStatus}) => (
-            <>
-                <Tag color={deliveryStatus === 'Canceled' ? 'error' : 'green'} key={deliveryStatus}>
-                    {deliveryStatus}
-                </Tag>
-            </>
-          ),
-    },
-]
+// export const columns:ColumnsType<DataType> = [
+//     {
+//         title:'Order ID',
+//         dataIndex:'orderID',
+//         key:'orderID'
+//     },
+//     {
+//         title:'Order',
+//         dataIndex:'order',
+//         key:'order',
+//         render: (_, { order }) => (
+//             <>
+//               {order.map(orderData => {
+//                 return (
+//                   <Tag  key={orderData}>
+//                     {orderData.toUpperCase()}
+//                   </Tag>
+//                 );
+//               })}
+//             </>
+//           ),
+//     },
+//     {
+//         title:'Delivery Date',
+//         dataIndex:'deliveryDate',
+//         key:'deliveruDate'
+//     },
+//     {
+//         title:'Customer',
+//         dataIndex:'customer',
+//         key:'customer'
+//     },
+//     {
+//         title:'Delivery Pricing',
+//         dataIndex:'deliveryPricing',
+//         key:'deliveryPricing'
+//     },
+//     {
+//         title:'Delivery Status',
+//         dataIndex:'deliveryStatus',
+//         key:'deliveryStatus',
+//         render: (_, { deliveryStatus}) => (
+//             <>
+//                 <Tag color={deliveryStatus === 'Canceled' ? 'error' : 'green'} key={deliveryStatus}>
+//                     {deliveryStatus}
+//                 </Tag>
+//             </>
+//           ),
+//     },
+// ]

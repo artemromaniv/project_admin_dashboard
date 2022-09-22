@@ -1,5 +1,4 @@
 import { MenuOpen, Menu, NotificationsNone, KeyboardArrowDown } from "@mui/icons-material"
-import { Typography } from "antd"
 import { useStateContext } from "../contexts/ContextProvider"
 import Satou from '../assets/Satou.jpg'
 const Header = () => {
@@ -20,7 +19,7 @@ const Header = () => {
             <div className="avatar-container">
               <img src = {Satou} className = 'avatar' />
             </div>
-            <Typography>Hi, Satou!</Typography>
+            <span>Hi, Satou!</span>
             <KeyboardArrowDown/>
           </div>                  
         </div>

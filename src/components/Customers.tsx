@@ -1,11 +1,59 @@
-import {Table } from "antd"
-import { Content } from "antd/lib/layout/layout"
-import {data,columns} from './data/customerData'
+import { useState } from 'react';
+import { createStyles, Table, ScrollArea } from '@mantine/core';
+import {data} from './data/customerData'
+const useStyles = createStyles((theme) => ({
+  header: {
+    position: 'sticky',
+    top: 0,
+    backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[7] : theme.white,
+    transition: 'box-shadow 150ms ease',
+
+    '&::after': {
+      content: '""',
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      bottom: 0,
+      borderBottom: `1px solid ${
+        theme.colorScheme === 'dark' ? theme.colors.dark[3] : theme.colors.gray[2]
+      }`,
+    },
+  },
+
+  scrolled: {
+    boxShadow: theme.shadows.sm,
+  },
+}))
+
+
+
 const Customers = () => {
+  const { classes, cx } = useStyles();
+  const [scrolled, setScrolled] = useState(false);
+
+  const rows = data.map((row) => (
+    <tr key={row.key}>
+      <td>{row.name}</td>
+      <td>{row.email}</td>
+      <td>{row.location}</td>
+      <td>{row.lastActive}</td>
+    </tr>
+  ))
+
   return (
-    <Content className="table-container">
-      <Table dataSource={data} columns = {columns}/>
-    </Content>
+    <ScrollArea sx={{ height: 700 }} onScrollPositionChange={({ y }) => setScrolled(y !== 0)}>
+      <Table sx={{ minWidth: 700 }}>
+        <thead className={cx(classes.header, { [classes.scrolled]: scrolled })}>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Location</th>
+            <th>Last Active</th>
+          </tr>
+        </thead>
+        <tbody>{rows}</tbody>
+      </Table>
+    </ScrollArea>
   )
 }
 
