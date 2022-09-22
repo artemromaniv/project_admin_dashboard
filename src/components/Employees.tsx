@@ -1,5 +1,5 @@
 
-import {data} from './data/employeeData'
+import {data as EmployeeData} from './data/employeeData'
 import { DataType as RowData} from './data/employeeData';
 import { useState } from 'react';
 import {
@@ -13,7 +13,7 @@ import {
   TextInput,
 } from '@mantine/core';
 import { keys } from '@mantine/utils';
-import { Search,Rule, ArrowDropDown,ArrowDropUp  } from '@mui/icons-material';
+import { Search,UnfoldMore, ArrowDropDown,ArrowDropUp  } from '@mui/icons-material';
 
 
 const useStyles = createStyles((theme) => ({
@@ -52,7 +52,7 @@ interface TableHeaderProps {
 
 const TableHeader = ({ children, reversed, sorted, onSort }: TableHeaderProps) =>  {
   const { classes } = useStyles();
-  const Icon = sorted ? (reversed ? ArrowDropUp : ArrowDropDown) : Rule;
+  const Icon = sorted ? (reversed ? ArrowDropUp : ArrowDropDown) : UnfoldMore;
   return (
     <th className={classes.th}>
       <UnstyledButton onClick={onSort} className={classes.control}>
@@ -87,7 +87,7 @@ const sortData = (
   }
 
   return filterData(
-    [...data].sort((a, b) => {
+    data.sort((a, b) => {
       if (payload.reversed) {
         return b[sortBy].localeCompare(a[sortBy]);
       }
@@ -99,6 +99,9 @@ const sortData = (
 }
 
 const Employees = ({ data }: TableSortProps) => {
+
+  data = EmployeeData
+  
   const [search, setSearch] = useState('');
   const [sortedData, setSortedData] = useState(data);
   const [sortBy, setSortBy] = useState<keyof RowData | null>(null);
@@ -119,7 +122,7 @@ const Employees = ({ data }: TableSortProps) => {
 
 
   //lines below causing errors,needs to be fixed
-  const rows = sortedData.map((row) => (
+  const rows = sortedData?.map((row) => (
     <tr key={row.employee}>
       <td>{row.employee}</td>
       <td>{row.email}</td>
@@ -183,11 +186,11 @@ const Employees = ({ data }: TableSortProps) => {
         </tr>
       </thead>
       <tbody>
-        {rows.length > 0 ? (
+        {rows?.length > 0 ? (
           rows
         ) : (
           <tr>
-            <td colSpan={Object.keys(data[0]).length}>
+            <td >
               <Text weight={500} align="center">
                 Nothing found
               </Text>
