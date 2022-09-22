@@ -8,6 +8,8 @@ Chart.register(...registerables)
 
 const useStyles = createStyles((theme) => ({
   App:{
+    width:'100vw',
+    height:'100vh',
     display:'flex',
     overflow:'hidden'
   },

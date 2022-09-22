@@ -1,30 +1,80 @@
+import { useState } from 'react';
+import { createStyles, Header as HeaderMantine, Container, Group, Burger } from '@mantine/core';
+
 import { MenuOpen, Menu, NotificationsNone, KeyboardArrowDown } from "@mui/icons-material"
 import { useStateContext } from "../contexts/ContextProvider"
 import Satou from '../assets/Satou.jpg'
-const Header = () => {
+
+
+const useStyles = createStyles((theme) => ({
+  header: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    height: '100%',
+  },
+
+  links: {
+    [theme.fn.smallerThan('xs')]: {
+      display: 'none',
+    },
+  },
+
+  burger: {
+    [theme.fn.largerThan('xs')]: {
+      display: 'none',
+    },
+  },
+
+  link: {
+    display: 'block',
+    lineHeight: 1,
+    padding: '8px 12px',
+    borderRadius: theme.radius.sm,
+    textDecoration: 'none',
+    color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
+    fontSize: theme.fontSizes.sm,
+    fontWeight: 500,
+
+    '&:hover': {
+      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+    },
+  },
+
+  linkActive: {
+    '&, &:hover': {
+      backgroundColor: theme.fn.variant({ variant: 'light', color: theme.primaryColor }).background,
+      color: theme.fn.variant({ variant: 'light', color: theme.primaryColor }).color,
+    },
+  },
+}));
+
+interface HeaderSimpleProps {
+  links: { link: string; label: string }[];
+}
+
+const Header = () =>  {
   const {collapsed,setCollapsed} = useStateContext()
+
 
   const handleCollapse = () => {
     setCollapsed(!collapsed)
   }
+  const { classes, cx } = useStyles();
+
+
 
   return (
-    <div className="header-container">
-        <div className="menu-icon">
-          <Menu onClick = {handleCollapse}/>
-        </div>
-        <div className="header-right-side" >
-          <div className="header-items-container">
-            <NotificationsNone/>
-            <div className="avatar-container">
-              <img src = {Satou} className = 'avatar' />
-            </div>
-            <span>Hi, Satou!</span>
-            <KeyboardArrowDown/>
-          </div>                  
-        </div>
-    </div>
-  )
+    <HeaderMantine height={60} mb={120}>
+      <Container className={classes.header}>
+        <Group spacing={5} className={classes.links}>
+          {/* {items} */}
+        </Group>
+
+        <Burger opened={!collapsed} onClick={handleCollapse} className={classes.burger} size="sm" />
+      </Container>
+    </HeaderMantine>
+  );
 }
 
 export default Header
