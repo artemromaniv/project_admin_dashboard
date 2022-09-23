@@ -71,11 +71,7 @@ const Header = () =>  {
   return (
     <HeaderMantine height={60} className = {classes.header} mb = {60} >
       <Burger opened={!collapsed} onClick={handleCollapse} size="sm" />
-        <ColorThemeToggle/>
-      {/* <Container className={classes.header}>
-        {/* <Group spacing={5} className={classes.links}>
-        </Group> */}
-
+      <ColorThemeToggle/>
     </HeaderMantine>
   );
 }

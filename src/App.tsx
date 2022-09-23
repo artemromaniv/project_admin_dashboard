@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router'
 import { Chart, registerables } from 'chart.js'
 import { useStateContext } from './contexts/ContextProvider'
 import { MantineProvider,ColorSchemeProvider,ColorScheme,createStyles } from '@mantine/core'
-import theme from './theme/theme'
+import ColorSchemeToggle from './components/ColorSchemeToggle'
 Chart.register(...registerables)
 
 const useStyles = createStyles((theme) => ({
@@ -34,7 +34,8 @@ const App = () => {
 
   return (
     <ColorSchemeProvider colorScheme={colorScheme} toggleColorScheme={toggleColorScheme}>
-      <MantineProvider withGlobalStyles withNormalizeCSS theme={theme} >
+      <MantineProvider withGlobalStyles withNormalizeCSS theme={{colorScheme}}>
+
         <div className={classes.App}>
           {!collapsed && (
             <div className={classes.nav_container}>
