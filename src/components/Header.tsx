@@ -1,13 +1,15 @@
 import { useState } from 'react';
-import { createStyles, Header as HeaderMantine, Container, Group, Burger } from '@mantine/core';
+import { createStyles, Header as HeaderMantine, Container, Group, Burger, useMantineColorScheme,ActionIcon } from '@mantine/core';
 
-import { MenuOpen, Menu, NotificationsNone, KeyboardArrowDown } from "@mui/icons-material"
+import { NotificationsNone, KeyboardArrowDown } from "@mui/icons-material"
 import { useStateContext } from "../contexts/ContextProvider"
 import Satou from '../assets/Satou.jpg'
+import ColorThemeToggle from './ColorSchemeToggle';
 
 
 const useStyles = createStyles((theme) => ({
   header: {
+    padding:theme.spacing.sm,
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
@@ -53,6 +55,8 @@ interface HeaderSimpleProps {
   links: { link: string; label: string }[];
 }
 
+
+
 const Header = () =>  {
   const {collapsed,setCollapsed} = useStateContext()
 
@@ -65,14 +69,13 @@ const Header = () =>  {
 
 
   return (
-    <HeaderMantine height={60} mb={120}>
-      <Container className={classes.header}>
-        <Group spacing={5} className={classes.links}>
-          {/* {items} */}
-        </Group>
+    <HeaderMantine height={60} className = {classes.header} mb = {60} >
+      <Burger opened={!collapsed} onClick={handleCollapse} size="sm" />
+        <ColorThemeToggle/>
+      {/* <Container className={classes.header}>
+        {/* <Group spacing={5} className={classes.links}>
+        </Group> */}
 
-        <Burger opened={!collapsed} onClick={handleCollapse} className={classes.burger} size="sm" />
-      </Container>
     </HeaderMantine>
   );
 }
