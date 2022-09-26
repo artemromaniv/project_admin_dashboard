@@ -4,7 +4,7 @@ import { NavBar, Header, Home, Employees, Customers, Orders, BudgetSales, Yearly
 import { Routes, Route } from 'react-router'
 import { Chart, registerables } from 'chart.js'
 import { useStateContext } from './contexts/ContextProvider'
-import { MantineProvider,ColorSchemeProvider,ColorScheme,createStyles } from '@mantine/core'
+import { MantineProvider,ColorSchemeProvider,ColorScheme,createStyles, Paper } from '@mantine/core'
 import ColorSchemeToggle from './components/ColorSchemeToggle'
 Chart.register(...registerables)
 
@@ -16,13 +16,10 @@ const useStyles = createStyles((theme) => ({
     overflow:'hidden'
   },
   nav_container:{
-    background:theme.colorScheme === 'light' ? '#ffffff' : '#1D1C25'
   },
   main:{
     width:'100%',
-    background:theme.colorScheme === 'light' ? '#F0F2F7' : '#000000'
-  }
-
+  },
 }))
 
 const App = () => {
@@ -38,9 +35,7 @@ const App = () => {
 
         <div className={classes.App}>
           {!collapsed && (
-            <div className={classes.nav_container}>
               <NavBar/>
-            </div>
           )
           }
           <div className={classes.main}>

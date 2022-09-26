@@ -6,7 +6,8 @@ import { Logout, SyncAlt } from "@mui/icons-material";
 const useStyles = createStyles((theme, _param, getRef)=> {
   return {
     wrapper:{
-      padding:theme.spacing.sm
+      padding:theme.spacing.sm,
+      height:'100vh'
     },
     logo_link:{
       textDecoration:'none',
@@ -42,7 +43,7 @@ const useStyles = createStyles((theme, _param, getRef)=> {
       paddingTop: theme.spacing.md,
       marginTop: theme.spacing.md,
       borderTop: `1px solid ${
-        theme.colorScheme === 'dark' ? theme.colors.dark[4] : theme.colors.gray[2]
+        theme.colorScheme === 'dark' ? '#1D1C25' : '#ffffff'
       }`,
       display:'flex',
       flexDirection:'column'

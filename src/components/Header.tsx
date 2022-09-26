@@ -69,7 +69,7 @@ const Header = () =>  {
 
 
   return (
-    <HeaderMantine height={60} className = {classes.header} mb = {60} >
+    <HeaderMantine height={60} className = {classes.header}>
       <Burger opened={!collapsed} onClick={handleCollapse} size="sm" />
       <ColorThemeToggle/>
     </HeaderMantine>
