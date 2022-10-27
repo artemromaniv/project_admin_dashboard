@@ -1,7 +1,6 @@
-
-import {data as EmployeeData} from './data/employeeData'
-import { DataType as RowData} from './data/employeeData';
-import { useState } from 'react';
+import { data as EmployeeData } from "./data/employeeData";
+import { DataType as RowData } from "./data/employeeData";
+import { useState } from "react";
 import {
   createStyles,
   Table,
@@ -11,22 +10,29 @@ import {
   Text,
   Center,
   TextInput,
-} from '@mantine/core';
-import { keys } from '@mantine/utils';
-import { Search,UnfoldMore, ArrowDropDown,ArrowDropUp  } from '@mui/icons-material';
-
+} from "@mantine/core";
+import { keys } from "@mantine/utils";
+import {
+  Search,
+  UnfoldMore,
+  ArrowDropDown,
+  ArrowDropUp,
+} from "@mui/icons-material";
 
 const useStyles = createStyles((theme) => ({
   th: {
-    padding: '0 !important',
+    padding: "0 !important",
   },
 
   control: {
-    width: '100%',
+    width: "100%",
     padding: `${theme.spacing.xs}px ${theme.spacing.md}px`,
 
-    '&:hover': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
+    "&:hover": {
+      backgroundColor:
+        theme.colorScheme === "dark"
+          ? theme.colors.dark[6]
+          : theme.colors.gray[0],
     },
   },
 
@@ -35,12 +41,10 @@ const useStyles = createStyles((theme) => ({
     height: 21,
     borderRadius: 21,
   },
-}))
-
-
+}));
 
 interface TableSortProps {
-  data: RowData[];
+  data?: RowData[];
 }
 
 interface TableHeaderProps {
@@ -50,7 +54,12 @@ interface TableHeaderProps {
   onSort(): void;
 }
 
-const TableHeader = ({ children, reversed, sorted, onSort }: TableHeaderProps) =>  {
+const TableHeader = ({
+  children,
+  reversed,
+  sorted,
+  onSort,
+}: TableHeaderProps) => {
   const { classes } = useStyles();
   const Icon = sorted ? (reversed ? ArrowDropUp : ArrowDropDown) : UnfoldMore;
   return (
@@ -67,14 +76,14 @@ const TableHeader = ({ children, reversed, sorted, onSort }: TableHeaderProps) =
       </UnstyledButton>
     </th>
   );
-}
+};
 
-const  filterData = (data: RowData[], search: string) => {
+const filterData = (data: RowData[], search: string) => {
   const query = search.toLowerCase().trim();
   return data.filter((item) =>
     keys(data[0]).some((key) => item[key].toLowerCase().includes(query))
   );
-}
+};
 
 const sortData = (
   data: RowData[],
@@ -96,13 +105,12 @@ const sortData = (
     }),
     payload.search
   );
-}
+};
 
 const Employees = ({ data }: TableSortProps) => {
+  data = EmployeeData;
 
-  data = EmployeeData
-  
-  const [search, setSearch] = useState('');
+  const [search, setSearch] = useState("");
   const [sortedData, setSortedData] = useState(data);
   const [sortBy, setSortBy] = useState<keyof RowData | null>(null);
   const [reverseSortDirection, setReverseSortDirection] = useState(false);
@@ -111,15 +119,16 @@ const Employees = ({ data }: TableSortProps) => {
     const reversed = field === sortBy ? !reverseSortDirection : false;
     setReverseSortDirection(reversed);
     setSortBy(field);
-    setSortedData(sortData(data, { sortBy: field, reversed, search }))
-  }
+    setSortedData(sortData(data, { sortBy: field, reversed, search }));
+  };
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value } = event.currentTarget;
     setSearch(value);
-    setSortedData(sortData(data, { sortBy, reversed: reverseSortDirection, search: value }));
+    setSortedData(
+      sortData(data, { sortBy, reversed: reverseSortDirection, search: value })
+    );
   };
-
 
   //lines below causing errors,needs to be fixed
   const rows = sortedData?.map((row) => (
@@ -134,73 +143,73 @@ const Employees = ({ data }: TableSortProps) => {
 
   return (
     <ScrollArea>
-    <TextInput
-      placeholder="Search by any field"
-      mb="md"
-      icon={<Search />}
-      value={search}
-      onChange={handleSearchChange}
-    />
-    <Table
-      horizontalSpacing="md"
-      verticalSpacing="xs"
-      sx={{ tableLayout: 'fixed', minWidth: 700 }}
-    >
-      <thead>
-        <tr>
-          <TableHeader
-            sorted={sortBy === 'employee'}
-            reversed={reverseSortDirection}
-            onSort={() => setSorting('employee')}
-          >
-            Name
-          </TableHeader>
-          <TableHeader
-            sorted={sortBy === 'email'}
-            reversed={reverseSortDirection}
-            onSort={() => setSorting('email')}
-          >
-            Email
-          </TableHeader>
-          <TableHeader
-            sorted={sortBy === 'status'}
-            reversed={reverseSortDirection}
-            onSort={() => setSorting('status')}
-          >
-            Status
-          </TableHeader>
-          <TableHeader
-            sorted={sortBy === 'position'}
-            reversed={reverseSortDirection}
-            onSort={() => setSorting('position')}
-          >
-            Position
-          </TableHeader>
-          <TableHeader
-            sorted={sortBy === 'salary'}
-            reversed={reverseSortDirection}
-            onSort={() => setSorting('salary')}
-          >
-            Salary
-          </TableHeader>
-        </tr>
-      </thead>
-      <tbody>
-        {rows?.length > 0 ? (
-          rows
-        ) : (
+      <TextInput
+        placeholder="Search by any field"
+        mb="md"
+        icon={<Search />}
+        value={search}
+        onChange={handleSearchChange}
+      />
+      <Table
+        horizontalSpacing="md"
+        verticalSpacing="xs"
+        sx={{ tableLayout: "fixed", minWidth: 700 }}
+      >
+        <thead>
           <tr>
-            <td >
-              <Text weight={500} align="center">
-                Nothing found
-              </Text>
-            </td>
+            <TableHeader
+              sorted={sortBy === "employee"}
+              reversed={reverseSortDirection}
+              onSort={() => setSorting("employee")}
+            >
+              Name
+            </TableHeader>
+            <TableHeader
+              sorted={sortBy === "email"}
+              reversed={reverseSortDirection}
+              onSort={() => setSorting("email")}
+            >
+              Email
+            </TableHeader>
+            <TableHeader
+              sorted={sortBy === "status"}
+              reversed={reverseSortDirection}
+              onSort={() => setSorting("status")}
+            >
+              Status
+            </TableHeader>
+            <TableHeader
+              sorted={sortBy === "position"}
+              reversed={reverseSortDirection}
+              onSort={() => setSorting("position")}
+            >
+              Position
+            </TableHeader>
+            <TableHeader
+              sorted={sortBy === "salary"}
+              reversed={reverseSortDirection}
+              onSort={() => setSorting("salary")}
+            >
+              Salary
+            </TableHeader>
           </tr>
-        )}
-      </tbody>
-    </Table>
-  </ScrollArea>
-  )
-}
+        </thead>
+        <tbody>
+          {rows?.length > 0 ? (
+            rows
+          ) : (
+            <tr>
+              <td>
+                <Text weight={500} align="center">
+                  Nothing found
+                </Text>
+              </td>
+            </tr>
+          )}
+        </tbody>
+      </Table>
+    </ScrollArea>
+  );
+};
 
-export default Employees
+export default Employees;
