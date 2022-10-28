@@ -1,27 +1,26 @@
 import { useStateContext } from "../contexts/ContextProvider";
-import { NavLink } from "react-router-dom";
-import { links } from "./data/links"
+import { Link, NavLink } from "react-router-dom";
+import { links } from "./data/links";
 
 const nav_links = links.map((item) => (
-  <div key={item.title}>
-    <span >{item.title}</span>
-    <div >
+  <section key={item.title} className = 'flex flex-col'>
+    <span className="mt-4">{item.title}</span>
+    <nav className="flex flex-col gap-4 mt-2">
       {item.content.map((link) => (
-        <NavLink 
-          to={`/${link.path}`} 
-          key = {link.name} 
-          className = {({isActive}) => (isActive ? '' : '')}
+        <NavLink
+          to={`/${link.path}`}
+          key={link.name}
+          className={({ isActive }) => (`flex items-center ${isActive ? "" : ""}`)}
         >
           {link.icon}
           <span className="link-title">{link.name}</span>
         </NavLink>
       ))}
-    </div>
-  </div>
-))
+    </nav>
+  </section>
+));
 
 const NavBar = () => {
-
   const { collapsed, setCollapsed } = useStateContext();
 
   const handleCollapse = () => {
@@ -29,15 +28,17 @@ const NavBar = () => {
   };
 
   return (
-    <nav
-      className={`top-0 left-0 w-[35vw] bg-blue-600  p-10 pl-20 text-white fixed h-full z-40  ease-in-out duration-300 ${
+    <section
+      className={`top-0 left-0 bg-crust  p-5 text-text fixed h-full z-40  ease-in-out duration-300 ${
         collapsed ? "-translate-x-full " : "translate-x-0"
       }`}
     >
+      <div className="flex gap-14 justify-between items-center">
+        <Link to={'/'} className = 'font-bold text-3xl'>Dashboard</Link>
+        <button onClick={handleCollapse}>X</button>
+      </div>
       {nav_links}
-      <button onClick={handleCollapse}>X</button>
-      <span>{collapsed ? "1" : "0"}</span>
-    </nav>
+    </section>
   );
 };
 

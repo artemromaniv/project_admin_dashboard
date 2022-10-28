@@ -22,5 +22,5 @@ const options = {
 }
 
 export const SalesOverviewChart = () => {
-    return <Doughnut options={options}  data={data} />
+    return <Doughnut options={options}  data={data} height = {'50%'} width = {'50%'} />
 }

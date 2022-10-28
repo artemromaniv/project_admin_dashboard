@@ -9,7 +9,7 @@ const Header = () => {
   };
 
   return (
-    <header className="navbar bg-base-100">
+    <header className="navbar">
       <div className="flex-none">
         <button className="btn btn-square btn-ghost" onClick={handleCollapse}>
           <svg

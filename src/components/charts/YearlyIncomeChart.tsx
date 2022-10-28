@@ -16,5 +16,5 @@ const options = {
 }
 
 export const YearlyIncomeChart = () => {
-    return <Line options={options}  data={data} />
+    return <Line options={options}  data={data} height = {'100%'} />
 }

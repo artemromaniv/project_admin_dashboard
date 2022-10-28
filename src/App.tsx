@@ -1,4 +1,4 @@
-import "./App.css";
+
 import { useState } from "react";
 import {
   NavBar,
@@ -21,7 +21,7 @@ const App = () => {
   const { collapsed } = useStateContext();
 
   return (
-    <div className="flex flex-col">
+    <div className="h-screen w-full bg-background overflow-hidden">
       <NavBar/>
       <div>
         <Header />

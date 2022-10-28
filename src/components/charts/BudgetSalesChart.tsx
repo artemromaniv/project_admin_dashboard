@@ -31,6 +31,6 @@ const options = {
 }
 export const BudgetSalesChart = () => {
   return (
-    <Bar options={options}  data={data} />
+    <Bar options={options}  data={data} height = {'100%'} />
   )
 }
