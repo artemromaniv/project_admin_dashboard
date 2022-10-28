@@ -1,79 +1,52 @@
-import { useState } from 'react';
-import { createStyles, Header as HeaderMantine, Container, Group, Burger, useMantineColorScheme,ActionIcon } from '@mantine/core';
-
-import { NotificationsNone, KeyboardArrowDown } from "@mui/icons-material"
-import { useStateContext } from "../contexts/ContextProvider"
-import Satou from '../assets/Satou.jpg'
-import ColorThemeToggle from './ColorSchemeToggle';
-
-
-const useStyles = createStyles((theme) => ({
-  header: {
-    padding:theme.spacing.sm,
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    height: '100%',
-  },
-
-  links: {
-    [theme.fn.smallerThan('xs')]: {
-      display: 'none',
-    },
-  },
-
-  burger: {
-    [theme.fn.largerThan('xs')]: {
-      display: 'none',
-    },
-  },
-
-  link: {
-    display: 'block',
-    lineHeight: 1,
-    padding: '8px 12px',
-    borderRadius: theme.radius.sm,
-    textDecoration: 'none',
-    color: theme.colorScheme === 'dark' ? theme.colors.dark[0] : theme.colors.gray[7],
-    fontSize: theme.fontSizes.sm,
-    fontWeight: 500,
-
-    '&:hover': {
-      backgroundColor: theme.colorScheme === 'dark' ? theme.colors.dark[6] : theme.colors.gray[0],
-    },
-  },
-
-  linkActive: {
-    '&, &:hover': {
-      backgroundColor: theme.fn.variant({ variant: 'light', color: theme.primaryColor }).background,
-      color: theme.fn.variant({ variant: 'light', color: theme.primaryColor }).color,
-    },
-  },
-}));
-
-interface HeaderSimpleProps {
-  links: { link: string; label: string }[];
-}
-
-
-
-const Header = () =>  {
-  const {collapsed,setCollapsed} = useStateContext()
-
+import { useState } from "react";
+import { useStateContext } from "../contexts/ContextProvider";
+import Satou from "../assets/Satou.jpg";
+const Header = () => {
+  const { collapsed, setCollapsed } = useStateContext();
 
   const handleCollapse = () => {
-    setCollapsed(!collapsed)
-  }
-  const { classes, cx } = useStyles();
-
-
+    setCollapsed(!collapsed);
+  };
 
   return (
-    <HeaderMantine height={60} className = {classes.header}>
-      <Burger opened={!collapsed} onClick={handleCollapse} size="sm" />
-      <ColorThemeToggle/>
-    </HeaderMantine>
+    <header className="navbar">
+      <div className="flex-none">
+        <button className="btn btn-square btn-ghost" onClick={handleCollapse}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            className="inline-block w-5 h-5 stroke-current"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M4 6h16M4 12h16M4 18h16"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div className="flex-1"/>
+      <div className="flex-none">
+        <button className="btn btn-square btn-ghost">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            className="inline-block w-5 h-5 stroke-current"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </header>
   );
-}
+};
 
-export default Header
+export default Header;

@@ -40,5 +40,5 @@ const options: ChartOptions = {
 }
 
 export const BestSellersChart = () => {
-    return <Bar options={options}  data={data} />
+    return <Bar options={options}  data={data} height = {'100%'}/>
 }

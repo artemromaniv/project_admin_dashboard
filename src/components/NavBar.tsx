@@ -1,113 +1,45 @@
-import { Link,NavLink } from "react-router-dom"
-import { links } from "./data/links"
-import { createStyles, Navbar, Group, Code, Title,Text} from '@mantine/core';
-import { Logout, SyncAlt } from "@mui/icons-material";
+import { useStateContext } from "../contexts/ContextProvider";
+import { Link, NavLink } from "react-router-dom";
+import { links } from "./data/links";
 
-const useStyles = createStyles((theme, _param, getRef)=> {
-  return {
-    wrapper:{
-      padding:theme.spacing.sm,
-      height:'100vh'
-    },
-    logo_link:{
-      textDecoration:'none',
-      color:theme.colorScheme === 'light' ? '#1D1C25' : '#ffffff'
-    },
-    nav_title:{
-      marginTop:theme.spacing.sm
-    },
-    nav_link_container:{
-      marginTop:theme.spacing.md,
-      display:'flex',
-      flexDirection:'column'
-    },
-    active_link:{
-      display:'flex',
-      alignItems:'center',
-      color:'white',
-      fontWeight:'bold',
-      textDecoration:"none",
-      padding:theme.spacing.sm,
-      borderRadius:"20px",
-      background:'#352FC5'
-    },
-    normal_link:{
-      display:'flex',
-      alignItems:'center',
-      color:'#A7A1AF',
-      fontWeight:'bold',
-      textDecoration:"none",
-      padding:theme.spacing.sm,
-    },
-    footer: {
-      paddingTop: theme.spacing.md,
-      marginTop: theme.spacing.md,
-      borderTop: `1px solid ${
-        theme.colorScheme === 'dark' ? '#1D1C25' : '#ffffff'
-      }`,
-      display:'flex',
-      flexDirection:'column'
-    },
-    link:{
-      textDecoration:'none'
-    },
-    link_icon:{
-      color: theme.colorScheme === 'dark' ? theme.colors.dark[2] : theme.colors.gray[6],
-      marginRight: theme.spacing.sm,
-    }
-  }
-})
+const nav_links = links.map((item) => (
+  <section key={item.title} className = 'flex flex-col'>
+    <span className="mt-4">{item.title}</span>
+    <nav className="flex flex-col gap-4 mt-2">
+      {item.content.map((link) => (
+        <NavLink
+          to={`/${link.path}`}
+          key={link.name}
+          className={({ isActive }) => (`flex items-center ${isActive ? "" : ""}`)}
+        >
+          {link.icon}
+          <span className="link-title">{link.name}</span>
+        </NavLink>
+      ))}
+    </nav>
+  </section>
+));
 
 const NavBar = () => {
+  const { collapsed, setCollapsed } = useStateContext();
 
-  const {classes} = useStyles()
-
-  const Logo = () => {
-    return (
-      <Link to = '/' className= {classes.logo_link}>
-        <Title>Dashboard</Title>
-      </Link>
-    )
-  }
-
-  const nav_links = links.map((item) => (
-    <div key={item.title}>
-      <Text className={classes.nav_title} >{item.title}</Text>
-      <div className={classes.nav_link_container}>
-        {item.content.map((link) => (
-          <NavLink 
-            to={`/${link.path}`} 
-            key = {link.name} 
-            className = {({isActive}) => (isActive ? classes.active_link : classes.normal_link)}
-          >
-            {link.icon}
-            <span className="link-title">{link.name}</span>
-          </NavLink>
-        ))}
-      </div>
-    </div>
-  ))
-
+  const handleCollapse = () => {
+    setCollapsed(!collapsed);
+  };
 
   return (
-    <Navbar className={classes.wrapper} width ={{sm:300}} >
-      <Navbar.Section grow>
-        <Logo/>
-        {nav_links}
-      </Navbar.Section>
-      <Navbar.Section className={classes.footer}>
-        <a href="#" className={classes.link} onClick={(event) => event.preventDefault()} >
-          <SyncAlt className={classes.link_icon} />
-          <span>Change account</span>
-        </a>
+    <section
+      className={`top-0 left-0 bg-crust  p-5 text-text fixed h-full z-40  ease-in-out duration-300 ${
+        collapsed ? "-translate-x-full " : "translate-x-0"
+      }`}
+    >
+      <div className="flex gap-14 justify-between items-center">
+        <Link to={'/'} className = 'font-bold text-3xl'>Dashboard</Link>
+        <button onClick={handleCollapse}>X</button>
+      </div>
+      {nav_links}
+    </section>
+  );
+};
 
-        <a href="#" className={classes.link} onClick={(event) => event.preventDefault()} >
-          <Logout className={classes.link_icon} />
-          <span>Log Out</span>
-        </a>
-      </Navbar.Section>
-    </Navbar>
-  )
-}
-
-export default NavBar
+export default NavBar;
