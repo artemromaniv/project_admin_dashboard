@@ -1,42 +1,14 @@
-import { Link,NavLink } from "react-router-dom"
-import { links } from "./data/links"
-import { Logout, SyncAlt } from "@mui/icons-material";
-
+import { useStateContext } from "../contexts/ContextProvider";
 const NavBar = () => {
-
-
-
-  const Logo = () => {
-    return (
-      <Link to = '/'>
-      </Link>
-    )
-  }
-
-  const nav_links = links.map((item) => (
-    <div key={item.title}>
-      <span  >{item.title}</span>
-      <div>
-        {item.content.map((link) => (
-          <NavLink 
-            to={`/${link.path}`} 
-            key = {link.name} 
-            className = {({isActive}) => (isActive ? '' : '')}
-          >
-            {link.icon}
-            <span className="link-title">{link.name}</span>
-          </NavLink>
-        ))}
-      </div>
-    </div>
-  ))
-
-
+  const { collapsed, setCollapsed } = useStateContext();
+  const handleCollapse = () => {
+    setCollapsed(!collapsed);
+  };
   return (
-  <nav>
-    
-  </nav>
-  )
-}
+    <nav className="absolute h-full bg-pink-200 p-5">
+      <button onClick={handleCollapse}>X</button>
+    </nav>
+  );
+};
 
-export default NavBar
+export default NavBar;

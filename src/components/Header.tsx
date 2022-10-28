@@ -1,19 +1,17 @@
 import { useState } from "react";
 import { useStateContext } from "../contexts/ContextProvider";
 import Satou from "../assets/Satou.jpg";
-
 const Header = () => {
   const { collapsed, setCollapsed } = useStateContext();
 
-  // const handleCollapse = () => {
-  //   setCollapsed(!collapsed)
-  // }
-
+  const handleCollapse = () => {
+    setCollapsed(!collapsed);
+  };
 
   return (
     <header className="navbar bg-base-100">
       <div className="flex-none">
-        <button className="btn btn-square btn-ghost">
+        <button className="btn btn-square btn-ghost" onClick={handleCollapse}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -29,8 +27,7 @@ const Header = () => {
           </svg>
         </button>
       </div>
-      <div className="flex-1">
-      </div>
+      <div className="flex-1"/>
       <div className="flex-none">
         <button className="btn btn-square btn-ghost">
           <svg
