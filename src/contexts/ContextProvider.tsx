@@ -10,7 +10,7 @@ const StateContext = createContext<StateContextType>(null!);
 
 export const ContextProvider = ({children}:React.PropsWithChildren) => {
 
-  const [collapsed,setCollapsed] = useState(false)
+  const [collapsed,setCollapsed] = useState(true)
 
   return (
     <StateContext.Provider value={{collapsed,setCollapsed}}>

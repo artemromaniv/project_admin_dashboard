@@ -21,8 +21,8 @@ const App = () => {
   const { collapsed } = useStateContext();
 
   return (
-    <div>
-      {!collapsed && <NavBar />}
+    <div className="flex flex-col">
+      <NavBar/>
       <div>
         <Header />
         <div>
