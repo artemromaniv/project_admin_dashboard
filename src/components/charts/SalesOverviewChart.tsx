@@ -18,9 +18,9 @@ const data = {
 
 const options = {
     responsive: true,
-    maintainAspectRatio: true,
+    maintainAspectRatio: false,
 }
 
 export const SalesOverviewChart = () => {
-    return <Doughnut options={options}  data={data} height = {'50%'} width = {'50%'} />
+    return <Doughnut options={options}  data={data} height = {'100%'} width = {'100%'} />
 }

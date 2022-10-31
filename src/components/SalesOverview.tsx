@@ -1,8 +1,8 @@
 import { SalesOverviewChart } from "./charts/SalesOverviewChart"
 const SalesOverview = () => {
   return (
-    <div className="chart-container">
-      <div className="doughnut-chart" >
+    <div className="p-5">
+      <div className="bg-crust p-5 rounded-2xl shadow-lg shadow-slate-200" >
         <SalesOverviewChart />
       </div>
     </div>
