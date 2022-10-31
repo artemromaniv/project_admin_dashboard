@@ -10,9 +10,10 @@ const nav_links = links.map((item) => (
         <NavLink
           to={`/${link.path}`}
           key={link.name}
-          className={({ isActive }) => (`flex items-center ${isActive ? "" : ""}`)}
+          className={({ isActive }) => (`flex items-center px-5 py-2 rounded-2xl ${isActive ? "bg-blue text-crust" : "text-gray-500"}`)}
         >
           {link.icon}
+          <div className="w-3"/>
           <span className="link-title">{link.name}</span>
         </NavLink>
       ))}
@@ -29,7 +30,7 @@ const NavBar = () => {
 
   return (
     <section
-      className={`top-0 left-0 bg-crust  p-5 text-text fixed h-full z-40  ease-in-out duration-300 ${
+      className={`top-0 left-0 bg-crust  p-5 text-text fixed h-full z-40 rounded-r-3xl  ease-in-out duration-300 ${
         collapsed ? "-translate-x-full " : "translate-x-0"
       }`}
     >
