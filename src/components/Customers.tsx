@@ -1,25 +1,29 @@
-import { useState } from 'react';
-import {data} from './data/customerData'
-
-
-
+import { data } from "./data/customerData";
 const Customers = () => {
-
-
-  const rows = data.map((row) => (
-    <tr key={row.key}>
-      <td>{row.name}</td>
-      <td>{row.email}</td>
-      <td>{row.location}</td>
-      <td>{row.lastActive}</td>
-    </tr>
-  ))
-
   return (
-<div>
+    <section className="overflow-x-auto">
+      <table className="table w-full overflow-y-scroll">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Location</th>
+            <th>Last Active</th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((customer) => (
+            <tr key={customer.key}>
+              <th>{customer.name}</th>
+              <td>{customer.email}</td>
+              <td>{customer.location}</td>
+              <td>{customer.lastActive}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  );
+};
 
-</div>
-  )
-}
-
-export default Customers
+export default Customers;

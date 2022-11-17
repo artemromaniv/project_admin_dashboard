@@ -8,6 +8,7 @@ const Employees = () => {
           <tr>
             <th>Name</th>
             <th>Position</th>
+            <th>Email</th>
             <th>Status</th>
             <th>Salary</th>
           </tr>
@@ -22,6 +23,7 @@ const Employees = () => {
           {data.map((employee) => (
             <tr key={employee.employee}>
               <th>{employee.employee}</th>
+              <td>{employee.email}</td>
               <td>{employee.position}</td>
               <td>{employee.status}</td>
               <td>{employee.salary}</td>
