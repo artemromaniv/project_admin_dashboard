@@ -31,9 +31,10 @@ const Home = () => {
         </div>
         <div className={styles.card}>
           <span>New Clients</span>
-          <span className="text-3xl">+ {newClients}</span>
+          <span className="text-3xl">{newClients}</span>
         </div>
       </div>
+      
     </section>
   );
 };

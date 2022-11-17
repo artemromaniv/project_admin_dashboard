@@ -1,15 +1,14 @@
 import { useStateContext } from "../contexts/ContextProvider";
 import { Link, NavLink } from "react-router-dom";
 import { links } from "./data/links";
-
-
+import Satou from "../assets/Satou.jpg";
 const NavBar = () => {
   const { collapsed, setCollapsed } = useStateContext();
-  
+
   const handleCollapse = () => {
     setCollapsed(!collapsed);
   };
-  
+
   const nav_links = links.map((item) => (
     <section key={item.title} className="flex flex-col">
       <span className="mt-4">{item.title}</span>
@@ -23,8 +22,7 @@ const NavBar = () => {
                 isActive ? "bg-blue text-crust" : "text-gray-500"
               }`
             }
-
-            onClick = {handleCollapse}
+            onClick={handleCollapse}
           >
             {link.icon}
             <div className="w-3" />
@@ -35,20 +33,29 @@ const NavBar = () => {
     </section>
   ));
 
-
-
   return (
     <section
       className={`top-0 left-0 bg-crust  p-5 text-text fixed h-full z-40 rounded-r-3xl drop-shadow-xl  ease-in-out duration-300 ${
         collapsed ? "-translate-x-full " : "translate-x-0"
       }`}
     >
-      <div className="flex gap-14 justify-between items-center">
-        <Link to={"/"} className="font-bold text-3xl">
+      <section className="flex gap-14 justify-between items-center">
+        <Link to={"/"} className="font-bold text-3xl" onClick={handleCollapse}>
           Dashboard
         </Link>
         <button onClick={handleCollapse}>X</button>
-      </div>
+      </section>
+      <div className="h-4" />
+      <section className="w-full flex flex-col items-center">
+        <div className="avatar">
+          <div className="w-24 mask mask-hexagon">
+            <img src={Satou} />
+          </div>
+        </div>
+        <div className="h-2"/>
+        <span>Satou Shizune</span>
+        <span>Admin</span>
+      </section>
       {nav_links}
     </section>
   );
