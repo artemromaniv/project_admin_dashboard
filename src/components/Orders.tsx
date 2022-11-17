@@ -2,7 +2,7 @@ import {data} from './data/ordersData'
 
 const Orders = () => {
   return (
-    <section className="overflow-x-auto">
+    <section className="overflow-x-auto p-5">
       <table className="table w-full overflow-y-scroll">
         <thead>
           <tr>

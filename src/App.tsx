@@ -21,9 +21,9 @@ const App = () => {
   const { collapsed } = useStateContext();
 
   return (
-    <div className="h-screen w-full bg-background overflow-hidden">
+    <div className="h-screen w-full bg-background">
       <NavBar/>
-      <div>
+      <div className = {collapsed ? '' : 'blur'}>
         <Header />
         <div>
           <Routes>

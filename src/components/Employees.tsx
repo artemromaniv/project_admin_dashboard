@@ -2,7 +2,7 @@ import { data } from "./data/employeeData";
 
 const Employees = () => {
   return (
-    <section className="overflow-x-auto">
+    <section className="overflow-x-auto p-5">
       <table className="table w-full overflow-y-scroll">
         <thead>
           <tr>
@@ -13,7 +13,7 @@ const Employees = () => {
             <th>Salary</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="rounded-xl">
           {/* <tr>
         <th>1</th>
         <td>Cy Ganderton</td>
@@ -22,7 +22,7 @@ const Employees = () => {
       </tr> */}
           {data.map((employee) => (
             <tr key={employee.employee}>
-              <th>{employee.employee}</th>
+              <td>{employee.employee}</td>
               <td>{employee.email}</td>
               <td>{employee.position}</td>
               <td>{employee.status}</td>

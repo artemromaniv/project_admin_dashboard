@@ -1,7 +1,7 @@
 import { data } from "./data/customerData";
 const Customers = () => {
   return (
-    <section className="overflow-x-auto">
+    <section className="overflow-x-auto p-5">
       <table className="table w-full overflow-y-scroll">
         <thead>
           <tr>
@@ -11,10 +11,10 @@ const Customers = () => {
             <th>Last Active</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody >
           {data.map((customer) => (
             <tr key={customer.key}>
-              <th>{customer.name}</th>
+              <td>{customer.name}</td>
               <td>{customer.email}</td>
               <td>{customer.location}</td>
               <td>{customer.lastActive}</td>
