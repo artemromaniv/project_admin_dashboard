@@ -12,9 +12,7 @@ import {
   BestSellers,
 } from "./components";
 import { Routes, Route } from "react-router";
-import { Chart, registerables } from "chart.js";
 import { useStateContext } from "./contexts/ContextProvider";
-Chart.register(...registerables);
 
 const App = () => {
   const { collapsed } = useStateContext();
