@@ -1,4 +1,4 @@
-import { Doughnut } from "react-chartjs-2";
+
 import { ResponsivePie } from "@nivo/pie";
 // const data = [
 //     'Japan',
