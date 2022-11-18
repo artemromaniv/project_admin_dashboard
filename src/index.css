@@ -13,7 +13,15 @@
   --raisin-black:#1D1C25;
   --cinnamon-satin:#C26F7A;
   font-family: 'Lato', sans-serif;
+
 }
+
+body{
+  min-height: 100vh;
+  overflow: auto;
+  background-color: #F0F2F7;
+}
+
 
 ::-webkit-scrollbar {
   width: 6px;

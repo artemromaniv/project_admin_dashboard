@@ -1,5 +1,4 @@
 
-import { useState } from "react";
 import {
   NavBar,
   Header,
@@ -21,7 +20,7 @@ const App = () => {
   const { collapsed } = useStateContext();
 
   return (
-    <div className="h-screen w-full bg-background">
+    <div className="w-full">
       <NavBar/>
       <div className = {collapsed ? '' : 'blur'}>
         <Header />
