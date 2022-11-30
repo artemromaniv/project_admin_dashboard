@@ -40,7 +40,7 @@ const Card = ({ title, value, icon }: CardProps) => {
 
 const Home = () => {
   return (
-    <section className="p-5">
+    <section className="px-2 md:p-5 md:py-15 lg:px-24 xl:px-24">
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
         <Card
           title="Total sales"
@@ -62,6 +62,16 @@ const Home = () => {
           value={newClients.toString()}
           icon={<UserPlus />}
         />
+      </div>
+      <div className="h-8" />
+      <div className="grid grid-cols-4 gap-5">
+        <div className="bg-crust h-20 w-full rounded-2xl shadow-lg shadow-slate-200 col-span-3"></div>
+        <div className="bg-crust  w-full rounded-2xl shadow-lg shadow-slate-200 col-span-1"></div>
+      </div>
+      <div className="h-8" />
+      <div className="grid grid-cols-4 gap-5">
+        <div className="bg-crust h-20 w-full rounded-2xl shadow-lg shadow-slate-200 col-span-2"></div>
+        <div className="bg-crust  w-full rounded-2xl shadow-lg shadow-slate-200 col-span-2"></div>
       </div>
     </section>
   );
