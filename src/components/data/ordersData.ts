@@ -6,7 +6,7 @@ interface DataType {
     order:string[],
     deliveryDate:string,
     deliveryPricing:string,
-    deliveryStatus:string
+    deliveryStatus: "Continue" | "Delivered" | "Canceled"
 
 }
 
@@ -36,7 +36,7 @@ export const data: DataType[] = [
         deliveryDate:dayjs('2022-06-15').format('DD.MM.YYYY'),
         customer:'Takuma Watanabe',
         deliveryPricing:`${2199} $`,
-        deliveryStatus:'Delievered'
+        deliveryStatus:'Delivered'
     },
     {
         key:'4',
@@ -126,7 +126,7 @@ export const data: DataType[] = [
         deliveryDate:dayjs('2022-06-12').format('DD.MM.YYYY'),
         customer:'Takuma Watanabe',
         deliveryPricing:`${299} $`,
-        deliveryStatus:'Delievered'
+        deliveryStatus:'Delivered'
     },
     {
         key:'14',
