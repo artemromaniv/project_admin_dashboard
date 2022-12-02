@@ -72,17 +72,20 @@ const Home = () => {
           vitae, explicabo voluptatum quam quidem dignissimos molestias pariatur
           doloribus consectetur totam. Rerum!
         </div>
-        <div className="bg-crust  w-full rounded-2xl shadow-lg shadow-slate-200 col-span-2 p-5">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-          nobis facere, reprehenderit temporibus officia iste? Error laborum
-          officia fugit nesciunt ut similique. Eum repudiandae deleniti
-          laboriosam. Ducimus voluptatibus a minima.
+        <div className="bg-crust  w-full rounded-2xl shadow-lg shadow-slate-200 col-span-2 p-5 flex flex-col justify-between">
+          <h3>Revenue generated</h3>
+          <progress
+            className="progress progress-primary w-full h-8"
+            value="70"
+            max="100"
+          >
+          </progress>
         </div>
       </div>
       <div className="h-8" />
-        <div className="bg-crust  w-full rounded-2xl shadow-lg shadow-slate-200 xl:col-span-4 p-5 h-[240px]">
-          <RevenueChart />
-        </div>
+      <div className="bg-crust  w-full rounded-2xl shadow-lg shadow-slate-200 p-5 h-[240px]">
+        <RevenueChart />
+      </div>
     </section>
   );
 };
