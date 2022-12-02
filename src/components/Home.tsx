@@ -65,27 +65,7 @@ const Home = () => {
         />
       </div>
       <div className="h-8" />
-      <div className="grid grid-cols-1  xl:grid-cols-4 gap-5 w-full">
-        <div className="bg-crust  w-full rounded-2xl shadow-lg shadow-slate-200 xl:col-span-3 p-5">
-          <RevenueChart/>
-        </div>
-        <div className="bg-crust  w-full rounded-2xl shadow-lg shadow-slate-200 col-span-1 grid place-items-center p-5 py-10">
-          {/* Typescript gives an error on inline style below, but it seems to work fine */}
-          <div
-            className="radial-progress font-bold text-3xl text-little_boy_blue"
-            style={{
-              // @ts-ignore
-              "--value": "70",
-              "--size": "12rem",
-              "--thickness": "26px",
-            }}
-          >
-            70%
-          </div>
-        </div>
-      </div>
-      <div className="h-8" />
-      {/* <div className="grid grid-cols-1 xl:grid-cols-4 gap-5">
+      <div className="grid grid-cols-1 xl:grid-cols-4 gap-5">
         <div className="bg-crust  w-full rounded-2xl shadow-lg shadow-slate-200 col-span-2 p-5">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident,
           laborum recusandae aliquam, unde eos dolorum perferendis quasi alias
@@ -98,7 +78,11 @@ const Home = () => {
           officia fugit nesciunt ut similique. Eum repudiandae deleniti
           laboriosam. Ducimus voluptatibus a minima.
         </div>
-      </div> */}
+      </div>
+      <div className="h-8" />
+        <div className="bg-crust  w-full rounded-2xl shadow-lg shadow-slate-200 xl:col-span-4 p-5 h-[240px]">
+          <RevenueChart />
+        </div>
     </section>
   );
 };
