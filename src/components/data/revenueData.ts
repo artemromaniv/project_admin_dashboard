@@ -31,30 +31,6 @@ export const data: DataType[] = [
                 x: "bus",
                 y: 236,
             },
-            {
-                x: "car",
-                y: 88,
-            },
-            {
-                x: "moto",
-                y: 232,
-            },
-            {
-                x: "bicycle",
-                y: 281,
-            },
-            {
-                x: "horse",
-                y: 1,
-            },
-            {
-                x: "skateboard",
-                y: 35,
-            },
-            {
-                x: "others",
-                y: 14,
-            },
         ],
     },
     {
@@ -84,30 +60,6 @@ export const data: DataType[] = [
                 x: "bus",
                 y: 175,
             },
-            {
-                x: "car",
-                y: 33,
-            },
-            {
-                x: "moto",
-                y: 189,
-            },
-            {
-                x: "bicycle",
-                y: 97,
-            },
-            {
-                x: "horse",
-                y: 87,
-            },
-            {
-                x: "skateboard",
-                y: 299,
-            },
-            {
-                x: "others",
-                y: 251,
-            },
         ],
     },
     {
@@ -136,30 +88,6 @@ export const data: DataType[] = [
             {
                 x: "bus",
                 y: 152,
-            },
-            {
-                x: "car",
-                y: 189,
-            },
-            {
-                x: "moto",
-                y: 152,
-            },
-            {
-                x: "bicycle",
-                y: 8,
-            },
-            {
-                x: "horse",
-                y: 197,
-            },
-            {
-                x: "skateboard",
-                y: 107,
-            },
-            {
-                x: "others",
-                y: 170,
             },
         ],
     },

@@ -10,6 +10,7 @@ import {
 } from "tabler-icons-react";
 import RevenueChart from "./charts/RevenueChart";
 
+// generating random values for mockup
 const getRandomInt = (min: number, max: number) => {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -42,6 +43,7 @@ const Card = ({ title, value, icon }: CardProps) => {
 const Home = () => {
   return (
     <section className="px-2 md:p-5 md:py-15 lg:px-24 xl:px-24">
+      {/* Grid with stat cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
         <Card
           title="Total sales"
@@ -64,27 +66,22 @@ const Home = () => {
           icon={<UserPlus />}
         />
       </div>
+      {/* Revenue chart and Total Revenue progress */}
       <div className="h-8" />
-      <div className="grid grid-cols-1 xl:grid-cols-4 gap-5">
-        <div className="bg-crust  w-full rounded-2xl shadow-lg shadow-slate-200 col-span-2 p-5">
-          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Provident,
-          laborum recusandae aliquam, unde eos dolorum perferendis quasi alias
-          vitae, explicabo voluptatum quam quidem dignissimos molestias pariatur
-          doloribus consectetur totam. Rerum!
+      <div className="grid grid-cols-1 xl:grid-cols-3 gap-5">
+        <div className="bg-crust  w-full rounded-2xl shadow-lg shadow-slate-200 col-span-1 p-5 flex flex-col items-center">
+          <h3>Total Revenue</h3>
+          <div className="h-8"/>
+          <div
+            className="radial-progress text-primary text-2xl"
+            // @ts-ignore
+            style={{ "--value": "70", "--size": "12rem", "--thickness": "1.3rem" }}          >
+            70%
+          </div>
         </div>
-        <div className="bg-crust  w-full rounded-2xl shadow-lg shadow-slate-200 col-span-2 p-5 flex flex-col justify-between">
-          <h3>Revenue generated</h3>
-          <progress
-            className="progress progress-primary w-full h-8"
-            value="70"
-            max="100"
-          >
-          </progress>
+        <div className="bg-crust  w-full rounded-2xl shadow-lg shadow-slate-200 xl:col-span-2 p-5">
+          <RevenueChart />
         </div>
-      </div>
-      <div className="h-8" />
-      <div className="bg-crust  w-full rounded-2xl shadow-lg shadow-slate-200 p-5 h-[240px]">
-        <RevenueChart />
       </div>
     </section>
   );
