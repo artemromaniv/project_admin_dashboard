@@ -73,9 +73,9 @@ const Home = () => {
           <h3>Total Revenue</h3>
           <div className="h-8" />
           <div
-            className="radial-progress text-primary text-2xl"
-            // @ts-ignore
+            className="radial-progress text-primary font-bold text-3xl"
             style={{
+              // @ts-ignore
               "--value": "70",
               "--size": "12rem",
               "--thickness": "1.3rem",
@@ -87,6 +87,11 @@ const Home = () => {
         <div className="bg-crust  w-full rounded-2xl shadow-lg shadow-slate-200 xl:col-span-2 p-5">
           <RevenueChart />
         </div>
+      </div>
+      {/* Latest transactions */}
+      <div className="h-8"/>
+      <div className="bg-crust w-full rounded-2xl shadow-lg shadow-slate-200 p-5">
+
       </div>
     </section>
   );

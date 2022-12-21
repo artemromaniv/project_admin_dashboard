@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -11,13 +11,13 @@
   --persian-blue: #352fc5;
   --raisin-black: #1d1c25;
   --cinnamon-satin: #c26f7a;
-  font-family: "Lato", sans-serif;
 }
 
 body {
   min-height: 100vh;
   overflow: auto;
   background-color: #f0f2f7;
+  font-family: "Roboto", sans-serif;
 }
 
 ::-webkit-scrollbar {
