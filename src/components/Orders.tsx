@@ -1,16 +1,14 @@
 import { data } from "./data/ordersData";
 
-const statusColor = (status:string) => {
+const statusColor = (status: string) => {
   if (status === "Continue") {
-    return "bg-yellow-300"
+    return "bg-yellow-300";
+  } else if (status === "Delivered") {
+    return "bg-green-300";
+  } else {
+    return "bg-red-300";
   }
-  else if (status === "Delivered") {
-      return "bg-green-300"
-  }
-  else {
-      return "bg-red-300"
-  } 
-}
+};
 
 const Orders = () => {
   return (
@@ -69,7 +67,11 @@ const Orders = () => {
                       {order.deliveryDate}
                     </div>
                   </td>
-                  <td className={`p-4 whitespace-nowrap ${statusColor(order.deliveryStatus)}`}>
+                  <td
+                    className={`p-4 whitespace-nowrap ${statusColor(
+                      order.deliveryStatus
+                    )}`}
+                  >
                     <div className="font-meduim text-gray-800">
                       {order.deliveryStatus}
                     </div>

@@ -18,8 +18,8 @@ const NavBar = () => {
             to={`/${link.path}`}
             key={link.name}
             className={({ isActive }) =>
-              `flex items-center px-5 py-2 rounded-2xl ${
-                isActive ? "bg-blue text-crust" : "text-gray-500"
+              `flex items-center py-1 rounded-2xl font-semibold ${
+                isActive ? "text-blue" : "text-gray-500"
               }`
             }
             onClick={handleCollapse}
@@ -52,9 +52,8 @@ const NavBar = () => {
             <img src={Satou} />
           </div>
         </div>
-        <div className="h-2"/>
+        <div className="h-2" />
         <span>Satou Shizune</span>
-        <span>Admin</span>
       </section>
       {nav_links}
     </section>

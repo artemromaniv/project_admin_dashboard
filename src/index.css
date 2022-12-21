@@ -1,27 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-
 * {
-  --ghost-white:#F0F2F7;
-  --wind-blue:#A4B0CE;
-  --manatee:#A7A1AF;
-  --little-boy-blue:#71A5DD;
-  --persian-blue:#352FC5;
-  --raisin-black:#1D1C25;
-  --cinnamon-satin:#C26F7A;
-  font-family: 'Lato', sans-serif;
-
+  --ghost-white: #f0f2f7;
+  --wind-blue: #a4b0ce;
+  --manatee: #a7a1af;
+  --little-boy-blue: #71a5dd;
+  --persian-blue: #352fc5;
+  --raisin-black: #1d1c25;
+  --cinnamon-satin: #c26f7a;
+  font-family: "Lato", sans-serif;
 }
 
-body{
+body {
   min-height: 100vh;
   overflow: auto;
-  background-color: #F0F2F7;
+  background-color: #f0f2f7;
 }
-
 
 ::-webkit-scrollbar {
   width: 6px;
@@ -38,4 +35,3 @@ body{
   background-color: var(--cinnamon-satin);
   color: var(--ghost-white);
 }
-

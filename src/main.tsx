@@ -1,12 +1,11 @@
-import React,{useState} from 'react'
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import {ContextProvider} from './contexts/ContextProvider'
-import './index.css'
-import App from './App'
+import React, { useState } from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import { ContextProvider } from "./contexts/ContextProvider";
+import "./index.css";
+import App from "./App";
 
-
-ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <React.StrictMode>
     <ContextProvider>
       <BrowserRouter>
@@ -14,4 +13,4 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
       </BrowserRouter>
     </ContextProvider>
   </React.StrictMode>
-)
+);

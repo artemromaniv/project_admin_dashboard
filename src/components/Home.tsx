@@ -71,11 +71,16 @@ const Home = () => {
       <div className="grid grid-cols-1 xl:grid-cols-3 gap-5">
         <div className="bg-crust  w-full rounded-2xl shadow-lg shadow-slate-200 col-span-1 p-5 flex flex-col items-center">
           <h3>Total Revenue</h3>
-          <div className="h-8"/>
+          <div className="h-8" />
           <div
             className="radial-progress text-primary text-2xl"
             // @ts-ignore
-            style={{ "--value": "70", "--size": "12rem", "--thickness": "1.3rem" }}          >
+            style={{
+              "--value": "70",
+              "--size": "12rem",
+              "--thickness": "1.3rem",
+            }}
+          >
             70%
           </div>
         </div>

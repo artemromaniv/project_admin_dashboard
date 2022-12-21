@@ -27,7 +27,7 @@ const Header = () => {
           </svg>
         </button>
       </div>
-      <div className="flex-1"/>
+      <div className="flex-1" />
       <div className="flex-none">
         <button className="btn btn-square btn-ghost">
           <svg

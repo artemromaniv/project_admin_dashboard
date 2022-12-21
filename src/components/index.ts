@@ -1,10 +1,10 @@
-export {default as NavBar} from './NavBar'
-export {default as Home} from './Home'
-export {default as Employees} from './Employees'
-export {default as Customers} from './Customers'
-export {default as Orders} from './Orders'
-export {default as BudgetSales} from './BudgetSales'
-export {default as YearlyIncome} from './YearlyIncome'
-export {default as SalesOverview} from './SalesOverview'
-export {default as BestSellers} from './BestSellers'
-export {default as Header} from './Header'
+export { default as NavBar } from "./NavBar";
+export { default as Home } from "./Home";
+export { default as Employees } from "./Employees";
+export { default as Customers } from "./Customers";
+export { default as Orders } from "./Orders";
+export { default as BudgetSales } from "./BudgetSales";
+export { default as YearlyIncome } from "./YearlyIncome";
+export { default as SalesOverview } from "./SalesOverview";
+export { default as BestSellers } from "./BestSellers";
+export { default as Header } from "./Header";

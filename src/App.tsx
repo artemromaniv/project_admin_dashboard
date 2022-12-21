@@ -1,4 +1,3 @@
-
 import {
   NavBar,
   Header,
@@ -19,8 +18,8 @@ const App = () => {
 
   return (
     <div className="w-full">
-      <NavBar/>
-      <div className = {collapsed ? '' : 'blur'}>
+      <NavBar />
+      <div className={collapsed ? "" : "blur"}>
         <Header />
         <div>
           <Routes>
