@@ -31,13 +31,11 @@ type CardProps = {
 const Card = ({ title, value, icon }: CardProps) => {
     return (
         <div className="bg-crust p-5 flex flex-col justify-between gap-4 rounded-2xl shadow-lg shadow-slate-200 font-bold">
-            <div className="flex justify-between items-center text-gray-400">
-                <span className="text-gray-900 text-xs">
-                    {title.toUpperCase()}
-                </span>
+            <div className="flex justify-between items-center text-gray-500">
+                <span className=" text-xs">{title.toUpperCase()}</span>
                 {icon}
             </div>
-            <span className="text-2xl">{value}</span>
+            <span className="text-2xl text-black">{value}</span>
         </div>
     )
 }
@@ -68,34 +66,17 @@ const Home = () => {
                     icon={<UserPlus />}
                 />
             </div>
-            {/* Revenue chart and Total Revenue progress */}
-            <div className="h-8" />
-            <div className="grid grid-cols-1 xl:grid-cols-3 gap-5">
-                <div className="bg-crust  w-full rounded-2xl shadow-lg shadow-slate-200 col-span-1 p-5 flex flex-col items-center">
-                    <h3>Total Revenue</h3>
-                    <div className="h-8" />
-                    <div
-                        className="radial-progress text-primary font-bold text-3xl"
-                        style={{
-                            // @ts-ignore
-                            '--value': '70',
-                            '--size': '12rem',
-                            '--thickness': '1.3rem',
-                        }}
-                    >
-                        70%
-                    </div>
-                </div>
-                <div className="bg-crust  w-full rounded-2xl shadow-lg shadow-slate-200 xl:col-span-2 p-5">
-                    <RevenueChart />
-                </div>
-            </div>
-            {/* Latest transactions */}
             <div className="h-8" />
             <div className="grid grid-cols-2 gap-5">
                 <div className="bg-crust w-full rounded-2xl shadow-lg shadow-slate-200 p-5"></div>
                 <div className="bg-crust w-full rounded-2xl shadow-lg shadow-slate-200 p-5"></div>
             </div>
+            {/* Revenue chart */}
+            <div className="h-8" />
+            <div className="bg-crust h-64  w-full rounded-2xl shadow-lg shadow-slate-200 xl:col-span-2 p-5">
+                <RevenueChart />
+            </div>
+            {/* Latest transactions */}
         </section>
     )
 }

@@ -32,6 +32,6 @@ body {
 }
 
 ::selection {
-    background-color: var(--cinnamon-satin);
+    background-color: var(--raisin-black);
     color: var(--ghost-white);
 }
